@@ -1,0 +1,33 @@
+
+<html>  
+  <head> 
+    
+	<script type="text/javascript" src="js/jquery-1.4.2.js"></script> 
+    <script type="text/javascript" src="js/postmessage.js"></script> 
+	<script type="text/javascript" src="js/composite.js"></script> 	
+	
+    <script>      
+      
+	  $(function() {    
+
+		$.composite({id:"child",mode:"child",parentDomain:"http://localhost:8080",domain:"http://child.domain:8080"});			        		
+      
+      });
+      
+      function post() {        
+		$.composite.login({user:"clifton"});		  		
+      };
+	  
+    </script> 
+  </head> 
+  <body> 
+    <div id="content">
+		<button onclick="post()">Post</button>
+		<table>
+			<tr><th>Task</th><th>User</th></tr>
+			<tr><td>Do something</td><td><a href="user/1" class="composite-user">Bill</a></td></tr>
+			<tr><td>Do something</td><td><a href="user/2" class="composite-user">Harold</a></td></tr>
+		</table>		
+	</div>	
+    <div id="msg"></div>   
+</body></html>

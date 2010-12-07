@@ -1,0 +1,91 @@
+<html>  
+  
+  <head> 
+    <title>Composite</title>     
+	<link rel="stylesheet" href="css/custom-theme/jquery-ui-1.8.6.custom.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+
+    <script type="text/javascript" src="js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="js/postmessage.js"></script> 
+	<script type="text/javascript" src="js/composite.js"></script> 
+    <script type="text/javascript"> 
+      var base_url = "http://localhost/";
+    </script>    
+	<script type="text/javascript" >
+	
+		var rnd=Math.random()*10000000000000000;
+	
+		function login() {	  
+							
+			$.composite.fn.login({user:"clifton"});		  				
+	
+		};
+		
+		
+		function logout() {	  
+							
+			$.composite.fn.logout();		  				
+	
+		};
+		
+		
+	$(function() {      
+      					
+		$.composite({mode:"parent",domain:"http://parent.domain:8080",appFrame:$('#appFrame')});
+		
+		$.composite.fn.addChild("child2","Not Composite","http://child.domain:8080/composite-js/child2.html?cb=" + rnd);
+		$.composite.fn.addChild("child","Composite","http://child.domain:8080/composite-js/child.html?cb=" + rnd);				
+				
+		$("#appFrame").tabs({height:500});
+		$("#appFrame").tabs('select', 0); // switch to home
+		
+	});
+	
+	</script>    
+  </head> 
+  
+  <body> 
+    <div id="header"> 
+			<div class="title">
+				Composite
+			</div>
+    
+			<div class="login-panel" id="login-panel">
+				<button class="login-button" onclick="login();">Login</button> 												
+			</div>
+			
+			<div class="user-panel" id="user-panel">
+				<span id="user-detail"></span>&nbsp;<button class="logout-button" onclick="logout();">Logout</button> 								
+			</div>
+			
+			<div style="clear:both"></div>
+	
+	</div> 
+    
+    <div id="body">  
+	
+		
+						
+			<div id="appFrame">
+				<ul id="tabs-header">
+					<li><a href="#app-home">Home</a></li>
+				</ul>					
+				<div id="app-home">
+					<h4>Composite</h4>
+					<p>This site demonstrates use of browser postMessage functions to enable the bi-directional interaction and styling of child iFrames embedded within a 'portal'.</p>
+					<p>The second tab is an embedded iFrame that does not have any of the parent javascript imported and initialised.  This app runs completely independently of the master window.</p>
+					<p>The third tab is the same application but with the composite SDK imported, and initialised (with a restriction on it being controlled only from the parent domain).  It now is completely linked, can interact with the events sent through from the parent, and trigger events back in the parent window (e.g. over-ride a user link to show a window from the parent rather than link to another page within the application).				
+					</p>
+					
+				</div>
+			</div>			
+	
+			<div style="clear:both"></div>
+			
+			<div id="dialog-message" title="User Details" style="display:none;">
+				
+			</div>
+	</div>
+	
+	</body>

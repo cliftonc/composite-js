@@ -1,0 +1,71 @@
+body {
+	font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; 
+	font-size: 0.9em;
+}
+
+#header {
+	padding: 5px;
+}
+
+#content {
+	display: inline;
+}
+
+.login-panel {	
+	float: right;		
+	margin-left: auto;
+}
+
+.user-panel {	
+	float: right;	
+}
+
+.title {	
+	float: left;
+	font-size: 22px;
+}
+
+button {
+	border: solid 1px silver;
+}
+
+#appFrame {
+	height: 500;
+}
+
+.app-tab {
+	height: 420;
+}
+
+.composite-child {
+	float: left; 
+	width:100%; 
+	height: 420; 
+	margin: 0px; 
+	border: none; 
+	overflow:auto;
+}
+
+table {
+	margin-top: 20px;
+	font-size: 0.9em;
+	border-collapse:collapse;
+}
+
+table th {
+	border: solid 1px silver;
+	background-color: black;
+	color: white;
+	font-weight: bolder;
+	padding: 5px;
+}
+
+table tr {
+	
+}
+
+table td {
+	padding: 5px;
+	border: solid 1px silver;
+	background-color: white;
+}

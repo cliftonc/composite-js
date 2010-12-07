@@ -1,0 +1,38 @@
+<html>  
+  <head>     
+  <script type="text/javascript" src="js/jquery-1.4.2.js"></script> 
+  <script type="text/javascript" src="js/postmessage.js"></script> 
+  <script type="text/javascript" src="js/composite/composite-default.js"></script>     
+  <script type="text/javascript" src="js/composite/composite-child-ui.js"></script>     
+  <script type="text/javascript" src="js/composite/composite-child.js"></script>     
+  <script type="text/javascript" src="js/composite/composite.js"></script>     
+    <script>      
+    
+    $(function() {    
+    // Register this as a potential child of the parent.domain
+      $.composite({id:"CLIFTONEXAMPLE",mode:"child",parentDomain:"http://ec2-46-51-137-148.eu-west-1.compute.amazonaws.com",domain:"http://localhost"});                       
+    });          
+    </script> 
+  </head> 
+  <body> 
+  <div id="header">
+    <h1>I am an Application!</h1>
+    <small>I am an application that serves a specific purpose, and as such I have been painstakingly styled to match whatever the vendor or original developer thought looked good.</small>
+    <hr/>    
+  </div>
+    <div id="content">    
+    <table>
+      <tr><th>Task</th><th>User</th></tr>
+      <tr><td>Do something</td><td><a href="user/1" class="composite-user">Bill</a></td></tr>
+      <tr><td>Do something</td><td><a href="user/2" class="composite-user">Harold</a></td></tr>
+    </table>    
+    <br/>
+    <a href="child4.html">Navigate to another page ...</a>
+  </div>  
+  <div id="footer">
+    <hr/>
+    <small>I also have footer text that isn't really relevant</small>    
+  </div>
+    <div id="msg" style="display:none"></div>   
+  </body>
+</html>
