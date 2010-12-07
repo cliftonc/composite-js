@@ -86,9 +86,15 @@ var _parent = {
   
     if(!$('iframe#' + id).length) {          
       
-      _parent.appFrame.append('<iframe class="app-iframe" id="' + id + '" src="' + src + '" style="display:none"/>');
+      $('#tabs-header').append('<li><a href="#app-' + id + '">' + name + '</a></li>');
+			_parent.appFrame.append('<div class="app-tab" id="app-' + id + '"><iframe class="app-iframe" id="' + id + '" src="' + src + '" style="display:none"/></div>');
+			var newFrame = $('iframe#' + id);
+				
+      
+      // _parent.appFrame.append('<iframe class="app-iframe" id="' + id + '" src="' + src + '" style="display:none"/>');
       
       var newFrame = $('iframe#' + id);           
+      
       newFrame.attr("class","composite-child");
       newFrame.attr("applycss",css);
                           

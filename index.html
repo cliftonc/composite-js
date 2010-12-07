@@ -2,13 +2,17 @@
   
   <head> 
     <title>Composite</title>     
-	<link rel="stylesheet" href="css/custom-theme/jquery-ui-1.8.6.custom.css" type="text/css" media="all" />
-	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
-
+    <link rel="stylesheet" href="css/custom-theme/jquery-ui-1.8.6.custom.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    
     <script type="text/javascript" src="js/jquery-1.4.2.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.6.custom.min.js"></script>    
     <script type="text/javascript" src="js/postmessage.js"></script> 
-	<script type="text/javascript" src="js/composite.js"></script> 
+    <script type="text/javascript" src="js/composite/composite-default.js"></script>     
+    <script type="text/javascript" src="js/composite/composite-parent-ui.js"></script>     
+    <script type="text/javascript" src="js/composite/composite-parent.js"></script>     
+    <script type="text/javascript" src="js/composite/composite.js"></script>     
+    
     <script type="text/javascript"> 
       var base_url = "http://localhost/";
     </script>    
@@ -32,10 +36,10 @@
 		
 	$(function() {      
       					
-		$.composite({mode:"parent",domain:"http://parent.domain:8080",appFrame:$('#appFrame')});
+		$.composite({mode:"parent",domain:"http://parent.domain",appFrame:$('#appFrame')});
 		
-		$.composite.fn.addChild("child2","Not Composite","http://child.domain:8080/composite-js/child2.html?cb=" + rnd);
-		$.composite.fn.addChild("child","Composite","http://child.domain:8080/composite-js/child.html?cb=" + rnd);				
+		$.composite.fn.addChild("NOEXAMPLE","Not Composite","http://child.domain/composite-js/child2.html?cb=" + rnd,'http://child.domain/composite-js/style.css');
+		$.composite.fn.addChild("LOCALEXAMPLE","Composite","http://child.domain/composite-js/child.html?cb=" + rnd,'no.css');				
 				
 		$("#appFrame").tabs({height:500});
 		$("#appFrame").tabs('select', 0); // switch to home
