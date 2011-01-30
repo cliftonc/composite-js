@@ -2,4 +2,3 @@ The aim of this project is to create a more 'enterprise' friendly version of a F
 
 e.g. The result will be a very thin layer that enables the embedding of specially crafted (e.g. they include the JS SDK on the page to allow inter-frame communication) sub-applications that then look and feel like part of the larger site, and can access components of them (e.g. an employee lookup dialog).
 
-Work will continue.
